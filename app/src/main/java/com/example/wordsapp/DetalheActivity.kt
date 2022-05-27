@@ -57,6 +57,6 @@ class DetalheActivity : AppCompatActivity() {
 
     fun pegarLetra():String{
         //TODO 4. retorne a letra passada na Intent
-        return intent?.extras?.getString(LETRA).toString()
+        return "a"
     }
 }

@@ -72,14 +72,11 @@ class LetterAdapter :
         holder.button.setOnClickListener {
 
             //TODO 1. Crie uma Intent para navegar até a DetalheActivity
-            val intent = Intent(contexto, DetalheActivity::class.java)
 
             //TODO 2. Passe o valor da variável letraClicada a Intent criada
-            intent.putExtra(DetalheActivity.LETRA, letraClicada)
 
             //TODO 3. Chame a função startActivity do objeto contexo
             // passando a Intent criada como parâmetro
-            contexto.startActivity(intent)
 
         }
     }
