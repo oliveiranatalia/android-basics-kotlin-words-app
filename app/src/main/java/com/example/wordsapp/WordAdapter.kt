@@ -17,6 +17,7 @@ package com.example.wordsapp
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
 import android.net.Uri
 import android.os.Build
 import android.view.LayoutInflater
@@ -89,10 +90,10 @@ class WordAdapter(private val letterId: String, context: Context) :
         holder.button.setOnClickListener {
             //TODO 5. Crie uma variável intent do tipo Intent e a inicialize com
             // os parâmetros Intent.ACTION_VIEW e linkDeBusca
-
-            //TODO 6. Chame a função startActivity do objeto contexo
+            val intent = Intent(Intent.ACTION_VIEW,linkDeBusca)
+            //TODO 6. Chame a função startActivity do objeto context
             // passando a Intent criada como parâmetro
-
+            context.startActivity(intent)
         }
     }
 

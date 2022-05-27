@@ -55,8 +55,10 @@ class DetalheActivity : AppCompatActivity() {
         title = getString(R.string.detail_prefix) + " " + letterId
     }
 
-    fun pegarLetra():String{
+    fun pegarLetra(): String {
         //TODO 4. retorne a letra passada na Intent
-        return "a"
+        val bundle = intent.getBundleExtra("bundleComStringContendoALetra")
+        val letraClicada = bundle?.getString("stringComALetraClicada")
+        return letraClicada.toString()
     }
 }

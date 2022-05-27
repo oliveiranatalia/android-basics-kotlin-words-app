@@ -17,12 +17,14 @@ package com.example.wordsapp
 
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -70,14 +72,17 @@ class LetterAdapter :
         val letraClicada = holder.button.text.toString()
 
         holder.button.setOnClickListener {
-
             //TODO 1. Crie uma Intent para navegar até a DetalheActivity
+            val intent = Intent(contexto,DetalheActivity::class.java)
 
             //TODO 2. Passe o valor da variável letraClicada a Intent criada
+            val bundle = Bundle()
+            bundle.putString("stringComALetraClicada", letraClicada)
+            intent.putExtra("bundleComStringContendoALetra",bundle)
 
             //TODO 3. Chame a função startActivity do objeto contexo
             // passando a Intent criada como parâmetro
-
+            contexto.startActivity(intent)
         }
     }
 
