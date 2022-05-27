@@ -84,11 +84,15 @@ class WordAdapter(private val letterId: String, context: Context) :
         // Set the text of the WordViewHolder
         holder.button.text = item
 
-        // Assigns a [OnClickListener] to the button contained in the [ViewHolder]
+        val linkDeBusca: Uri = Uri.parse("${DetalheActivity.PREFIXO_DA_BUSCA}${item}")
+
         holder.button.setOnClickListener {
-            val queryUrl: Uri = Uri.parse("${DetalheActivity.PREFIXO_DA_BUSCA}${item}")
-            val intent = Intent(Intent.ACTION_VIEW, queryUrl)
-            context.startActivity(intent)
+            //TODO 5. Crie uma variável intent do tipo Intent e a inicialize com
+            // os parâmetros Intent.ACTION_VIEW e linkDeBusca
+
+            //TODO 6. Chame a função startActivity do objeto contexo
+            // passando a Intent criada como parâmetro
+
         }
     }
 
