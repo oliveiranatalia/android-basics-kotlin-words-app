@@ -66,17 +66,21 @@ class LetterAdapter :
         val item = list.get(position)
         holder.button.text = item.toString()
 
-        // Assigns a [OnClickListener] to the button contained in the [ViewHolder]
+        val contexto = holder.view.context
+        val letraClicada = holder.button.text.toString()
+
         holder.button.setOnClickListener {
-            val context = holder.view.context
-            // Create an intent with a destination of DetailActivity
-            val intent = Intent(context, DetailActivity::class.java)
-            // Add the selected letter to the intent as extra data
-            // The text of Buttons are [CharSequence], a list of characters,
-            // so it must be explicitly converted into a [String].
-            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())
-            // Start an activity using the data and destination from the Intent.
-            context.startActivity(intent)
+
+            //TODO 1. Crie uma Intent para navegar até a DetalheActivity
+            val intent = Intent(contexto, DetalheActivity::class.java)
+
+            //TODO 2. Passe o valor da variável letraClicada a Intent criada
+            intent.putExtra(DetalheActivity.LETRA, letraClicada)
+
+            //TODO 3. Chame a função startActivity do objeto contexo
+            // passando a Intent criada como parâmetro
+            contexto.startActivity(intent)
+
         }
     }
 
